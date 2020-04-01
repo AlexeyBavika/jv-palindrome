@@ -20,7 +20,10 @@ public class Palindrome {
      * <p>Пример: Madam, I'm Adam!</p>
      * <p>Результат: true</p>
      */
+
     public boolean isPalindrome(String text) {
-        return false;
+        String formattedText = text.replaceAll("[^a-zA-Z0-9]", "");
+        StringBuilder reversedText = new StringBuilder(formattedText).reverse();
+        return formattedText.equalsIgnoreCase(reversedText.toString());
     }
 }
